@@ -12,7 +12,7 @@ jobs:
     - name: Build
       run: cargo build --release --verbose
     - name: "Upload to Continuous Release"
-      uses: wez/upload-release-assets@releases/v1
+      uses: AButler/upload-release-assets@v2.0
       with:
          files: "target/release/omsi-elevate.exe"
          release-tag: "Continuous"
