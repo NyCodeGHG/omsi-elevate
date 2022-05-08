@@ -27,3 +27,4 @@ jobs:
           tag: "Continuous"
           token: ${{ secrets.GITHUB_TOKEN }}
           files: "omsi-elevate.exe"
+          allow_override: true
