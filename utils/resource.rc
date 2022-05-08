@@ -1,6 +1,6 @@
 #include <winres.h>
 #define IDI_ICON 0x101
-IDI_ICON ICON "lift.ico"
+IDI_ICON ICON "ecitaro.ico"
 APP_MANIFEST RT_MANIFEST manifest.manifest
 VS_VERSION_INFO VERSIONINFO
 FILEVERSION     1,0,0,0
