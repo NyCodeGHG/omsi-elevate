@@ -17,6 +17,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body: "Latest build from main"
-          tag_name: v${{ env.GITHUB_RUN_ID }}
-          release_name: ${{ env.GITHUB_RUN_ID }}
+          tag_name: v${{ github.run_id }}
+          release_name: ${{ github.run_id }}
           files: 'target/release/omsi-elevate.exe'
