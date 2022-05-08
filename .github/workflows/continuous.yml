@@ -8,11 +8,21 @@ jobs:
   build:
     runs-on: "windows-2022"
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: cargo build --release --verbose
-    - uses: meeDamian/github-release@2.0
-      with:
-        tag: "Continuous"
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: "target/release/omsi-elevate.exe"
+      - uses: actions/checkout@v2
+      - name: Build
+        run: cargo build --release --verbose
+      - uses: actions/upload-artifact@v3
+        with:
+          name: omsi-elevate
+          path: target/release/omsi-elevate.exe
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: omsi-elevate
+      - uses: meeDamian/github-release@2.0
+        with:
+          tag: "Continuous"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: "omsi-elevate.exe"
