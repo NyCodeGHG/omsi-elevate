@@ -11,14 +11,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --release --verbose
-    - name: "Upload artifact"
-      uses: actions/upload-artifact@master
-      with:
-         name: "omsi-elevate"
-         path: "target/release/omsi-elevate.exe"
     - name: "Upload to Continuous Release"
       uses: wez/upload-release-assets@releases/v1
       with:
-         files: "omsi-elevate.exe"
+         files: "target/release/omsi-elevate.exe"
          release-tag: "Continuous"
          repo-token: "${{ secrets.GITHUB_TOKEN }}"
