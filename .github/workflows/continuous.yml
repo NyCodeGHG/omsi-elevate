@@ -2,7 +2,7 @@ name: Continuous
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -11,23 +11,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --release --verbose
-    - name: "Build Release"
-      shell: bash
-      run: |
-        mkdir EleDo
-        mv target/release/eledo.exe target/release/eledo-pty-bridge.exe target/release/normdo.exe EleDo/
-        cp README.md LICENSE.md EleDo
-        cd EleDo
-        7z a -tzip ../EleDo.zip *
     - name: "Upload artifact"
       uses: actions/upload-artifact@master
       with:
-         name: "EleDo"
-         path: "EleDo.zip"
+         name: "omsi-elevate"
+         path: "target/release/omsi-elevate.exe"
     - name: "Upload to Continuous Release"
       uses: wez/upload-release-assets@releases/v1
       with:
-         files: "EleDo.zip"
+         files: "omsi-elevate.exe"
          release-tag: "Continuous"
          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-

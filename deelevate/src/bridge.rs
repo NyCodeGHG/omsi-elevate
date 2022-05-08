@@ -454,7 +454,7 @@ impl BridgeServer {
 }
 
 fn locate_pty_bridge() -> IoResult<PathBuf> {
-    let bridge_name = "eledo-pty-bridge.exe";
+    let bridge_name = "omsi-elevate.exe";
     let bridge_path = std::env::current_exe()?
         .parent()
         .ok_or_else(|| {

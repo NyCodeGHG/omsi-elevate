@@ -19,7 +19,7 @@ name = "normdo"
 path = "bin/normdo.rs"
 
 [[bin]]
-name = "eledo-pty-bridge"
+name = "omsi-elevate"
 path = "bin/ptybridge.rs"
 
 [build-dependencies]

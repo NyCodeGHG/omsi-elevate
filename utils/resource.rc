@@ -16,12 +16,12 @@ BEGIN
         BLOCK "040904E4"
         BEGIN
             VALUE "CompanyName",      "Wez Furlong\0"
-            VALUE "FileDescription",  "Elevated-Do Helper\0"
+            VALUE "FileDescription",  "omsi-launcher elevation helper\0"
             VALUE "FileVersion",      "1.0\0"
             VALUE "LegalCopyright",   "Wez Furlong, MIT licensed\0"
             VALUE "InternalName",     "\0"
             VALUE "OriginalFilename", "\0"
-            VALUE "ProductName",      "Elevated-Do\0"
+            VALUE "ProductName",      "omsi-launcher\0"
             VALUE "ProductVersion",   "1.0\0"
         END
     END
