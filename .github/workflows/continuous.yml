@@ -17,6 +17,7 @@ jobs:
           path: target/release/omsi-elevate.exe
   upload:
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
       - uses: actions/download-artifact@v3
         with:
